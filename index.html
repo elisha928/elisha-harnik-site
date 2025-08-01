@@ -70,11 +70,58 @@
     <h1 class="text-3xl font-bold mb-6">אלישע הרניק</h1>
     <div class="page-body w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
         <div contenteditable="true" class="text-lg mb-4">ברוכים הבאים לאתר שלי! תוכלו לערוך טקסט זה בלחיצה.</div>
-        <div class="item-block">
-            <div class="item-title">מוצר לדוגמה</div>
-            <div class="item-price">₪99</div>
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="תמונה לדוגמה">
+
+        <!-- טופס הוספת מוצר -->
+        <form id="addProductForm" class="mb-6 bg-gray-50 p-4 rounded-lg border">
+            <div class="mb-2">
+                <label for="title" class="block mb-1 font-semibold">שם המוצר:</label>
+                <input type="text" id="title" required class="w-full p-2 border rounded" />
+            </div>
+            <div class="mb-2">
+                <label for="price" class="block mb-1 font-semibold">מחיר:</label>
+                <input type="number" id="price" required min="0" class="w-full p-2 border rounded" />
+            </div>
+            <div class="mb-2">
+                <label for="image" class="block mb-1 font-semibold">קישור לתמונה:</label>
+                <input type="url" id="image" required class="w-full p-2 border rounded" placeholder="https://example.com/image.jpg" />
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded font-bold mt-2">הוסף מוצר</button>
+        </form>
+
+        <!-- מוצרים -->
+        <div id="productsList">
+            <div class="item-block">
+                <div class="item-title">מוצר לדוגמה</div>
+                <div class="item-price">₪99</div>
+                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="תמונה לדוגמה">
+            </div>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('addProductForm');
+        const productsList = document.getElementById('productsList');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const price = document.getElementById('price').value;
+            const image = document.getElementById('image').value;
+
+            // יצירת בלוק מוצר חדש
+            const productDiv = document.createElement('div');
+            productDiv.className = 'item-block';
+            productDiv.innerHTML = `
+                <div class="item-title">${title}</div>
+                <div class="item-price">₪${price}</div>
+                <img src="${image}" alt="תמונה של ${title}">
+            `;
+
+            productsList.appendChild(productDiv);
+
+            // ניקוי הטופס
+            form.reset();
+        });
+    </script>
 </body>
 </html>
