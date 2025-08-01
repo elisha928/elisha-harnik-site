@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אלישע הרניק</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            direction: rtl;
+            text-align: right;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        [contenteditable="true"]:focus {
+            outline: 2px solid #3b82f6;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+        }
+        [contenteditable="false"] {
+            cursor: default;
+            outline: none;
+            padding: 0;
+        }
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .page-body img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .item-block {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .item-block .item-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+        .item-block .item-price {
+            color: #10b981;
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <h1 class="text-3xl font-bold mb-6">אלישע הרניק</h1>
+    <div class="page-body w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
+        <div contenteditable="true" class="text-lg mb-4">ברוכים הבאים לאתר שלי! תוכלו לערוך טקסט זה בלחיצה.</div>
+        <div class="item-block">
+            <div class="item-title">מוצר לדוגמה</div>
+            <div class="item-price">₪99</div>
+            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="תמונה לדוגמה">
+        </div>
+    </div>
+</body>
+</html>
