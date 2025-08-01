@@ -1,76 +1,44 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>האתר שלי - ניתן לעריכה</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* הגדרת גופן "Inter" כברירת מחדל */
-        body {
-            font-family: "Inter", sans-serif;
-            /* רקע גרדיאנט כברירת מחדל */
-            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-            direction: rtl; /* כיוון טקסט מימין לשמאל עבור עברית */
-            text-align: right; /* יישור טקסט לימין */
-            background-attachment: fixed; /* רקע קבוע בגלילה */
-            background-size: cover; /* ודא שהרקע מכסה את כל השטח */
-            background-position: center; /* מרכז את תמונת הרקע */
-            background-repeat: no-repeat; /* מונע חזרתיות של התמונה */
-        }
-        /* סגנון לאזורים הניתנים לעריכה */
-        [contenteditable="true"]:focus {
-            outline: 2px solid #3b82f6; /* הבלטה כחולה בפוקוס */
-            border-radius: 0.5rem; /* פינות מעוגלות */
-            padding: 0.5rem; /* ריווח פנימי */
-        }
-        /* סגנון לאזורים שאינם ניתנים לעריכה */
-        [contenteditable="false"] {
-            cursor: default;
-            outline: none;
-            padding: 0; /* איפוס ריווח פנימי אם היה בפוקוס קודם */
-        }
-        /* סגנון בסיסי לאייקונים */
-        .icon {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            stroke-width: 2;
-            stroke: currentColor;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        /* סגנון לתמונות המוחדרות */
-        .page-body img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1rem auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        /* סגנון לבלוק תמונה-פריט */
-        .item-block {
-            background-color: #f9fafb;
-            border: 1px solid #e5e7eb;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .item-block .item-title {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
-        .item-block .item-price {
-            color: #10b981; /* green-500 */
-            font-size: 1.125rem; /* text-lg */
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-        }
-    </style>
-</head> ... [full contents as in user's message] ... </script>
+    <title>Elisha's Product Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Elisha's Product Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Edit Products</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="product-list">
+            <h2>Product List</h2>
+            <ul>
+                <li>Product 1</li>
+                <li>Product 2</li>
+                <li>Product 3</li>
+            </ul>
+        </section>
+        <section id="edit-product">
+            <h2>Edit Product</h2>
+            <form>
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                <label for="product-description">Product Description:</label>
+                <textarea id="product-description" name="product-description" required></textarea>
+                <button type="submit">Update Product</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Elisha's Site</p>
+    </footer>
+</body>
+</html>
